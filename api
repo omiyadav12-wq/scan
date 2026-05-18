@@ -1,1 +1,10 @@
 index.mjs
+import { createStartHandler } from "@tanstack/react-start/server";
+
+const handler = createStartHandler({
+  entry: "../dist/server/server.mjs" 
+});
+
+export default async function (request, response) {
+  return handler(request, response);
+}
